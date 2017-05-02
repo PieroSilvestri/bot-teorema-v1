@@ -6,7 +6,7 @@ var connection = mysql.createPool({
 	port: '3306',
 	user: 'mjhnxzbg_test',
 	password: '@Password1.',
-	database: 'mjhnxzbg_munsrabot'
+	database: 'mjhnxzbg_teoremabot'
 });
 
 
