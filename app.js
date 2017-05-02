@@ -80,6 +80,7 @@ dialog.matches('None', builder.DialogAction.send('Non ho capito. Dai scrivimi al
 dialog.matches('Saluto', 
 	[
 		function(session, args, next){
+			console.log("SALUTO");
 			services.randomSaluto(function (err, data) {
 			    if (err) {
 			        console.log(err);
@@ -94,6 +95,8 @@ dialog.matches('Saluto',
 dialog.matches('Offesa', 
 	[
 		function(session, args, next){
+			console.log("OFFESA");
+
 			services.randomOffesa(function (err, data) {
 			    if (err) {
 			        console.log(err);
@@ -108,6 +111,7 @@ dialog.matches('Offesa',
 dialog.matches('Domanda', 
 	[
 		function(session, args, next){
+			console.log("DOMANDA");
 			services.randomDomanda(function (err, data) {
 			    if (err) {
 			        console.log(err);
@@ -118,9 +122,36 @@ dialog.matches('Domanda',
 		}
 	]
 );
-dialog.matches('Ringraziamento', builder.DialogAction.send('Grazie mulo!'));
 
+dialog.matches('Affermazione', 
+	[
+		function(session, args, next){
+			console.log("AFFERMAZIONE");
+			services.randomAffermazione(function (err, data) {
+			    if (err) {
+			        console.log(err);
+			    } else {
+			        session.send(data);
+			    }
+			}); 
+		}
+	]
+);
 
+dialog.matches('Ringraziamento', 
+	[
+		function(session, args, next){
+			console.log("RINGRAZIAMENTO");
+			services.randomRingraziamento(function (err, data) {
+			    if (err) {
+			        console.log(err);
+			    } else {
+			        session.send(data);
+			    }
+			}); 
+		}
+	]
+);
 
 
 dialog.onDefault(builder.DialogAction.send("I'm sorry I didn't understand. I can only create & delete alarms."));
