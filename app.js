@@ -104,6 +104,20 @@ dialog.matches('Offesa',
 		}
 	]
 );
+
+dialog.matches('Domanda', 
+	[
+		function(session, args, next){
+			services.randomDomanda(function (err, data) {
+			    if (err) {
+			        console.log(err);
+			    } else {
+			        session.send(data);
+			    }
+			}); 
+		}
+	]
+);
 dialog.matches('Ringraziamento', builder.DialogAction.send('Grazie mulo!'));
 
 
