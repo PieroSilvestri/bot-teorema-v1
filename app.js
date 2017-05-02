@@ -154,7 +154,7 @@ dialog.matches('Ringraziamento',
 );
 
 
-dialog.onDefault(builder.DialogAction.send("I'm sorry I didn't understand. I can only create & delete alarms."));
+dialog.onDefault(builder.DialogAction.send("Non ho capito. Scrivi meglio!"));
 
 
 process.on('uncaughtException', function (err) {
